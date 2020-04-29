@@ -10,7 +10,8 @@ class PopUpInfo extends HTMLElement {
         img.setAttribute('class', 'icon');
         const text = document.createElement('span');
         text.setAttribute('class', 'info');
-        text.textContent = 'Hello there!';
+        const dataText = this.getAttribute('data-text');
+        text.textContent = dataText;
 
         const style = document.createElement('style');
         style.textContent = `
