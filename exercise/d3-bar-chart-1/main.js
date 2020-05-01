@@ -32,6 +32,22 @@ customElements.define("d3-bar-chart",
                   return (d.x-1) * 35;
                 }
                });
+            svg.selectAll('text')
+               .data(data)
+               .enter()
+               .append('text')
+               .text(function(d) {
+                   return d.w;
+               })
+               .attr({
+                   'fill': '#000',
+                   'x': function(d) {
+                       return d.w+3;
+                   },
+                   'y': function(d) {
+                       return d.x * 35 - 12;
+                   }
+               });
             shadow.appendChild(container);
         }
     }
